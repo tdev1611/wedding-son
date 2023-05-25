@@ -2,6 +2,9 @@
 @section('title', 'Studio Diễm My')
 
 @section('content')
+    <style>
+        #record {}
+    </style>
     <!-- Start Banner -->
     <div class="ulockd-home-slider">
         <div class="container-fluid">
@@ -26,11 +29,12 @@
                                 <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</h3>
                                     <p>Lưu giữ kỹ niệm <strong>Ngày/Tháng/Năm</strong></p>
                                     <a href="#contact" class="btn ">Contact</a>
-                                    <p><small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, aliquam?</small></p>
+                                    <p><small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo,
+                                            aliquam?</small></p>
                             </div>
                         </div>
                     </div>
-                  
+
                 </div><!-- .pogoSlider -->
             </div>
         </div>
@@ -47,37 +51,43 @@
                         </div>
                     </div>
                 </div>
+                {{-- /perrsonal --}}
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="row align-items-center about-main-info">
-                            <div class="col-lg-8 col-md-6 col-sm-12">
-                                <h2> About <span>Sơn</span></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dicta ducimus
-                                    accusantium ipsa excepturi voluptas, fuga quas harum error accusamus eveniet cupiditate
-                                    quis laborum natus, nulla itaque nostrum quae doloribus?
-                                </p>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="about-img">
-                                    <img class="img-fluid rounded"
-                                        src="https://scontent.fthd1-1.fna.fbcdn.net/v/t1.6435-9/121971138_1659352534225361_1079750085293412818_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=sVqU31wcojMAX-LhR9h&_nc_ht=scontent.fthd1-1.fna&oh=00_AfDbmCdRRXs_k62ABk0AZPZlXYwqCuT3dAso4BLerxL5xw&oe=64959A73"
-                                        alt="" />
+                        @foreach ($personal as $index => $item)
+                            @if ($index % 2 == 0)
+                                <div class="row align-items-center about-main-info" id="record">
+                                    <div class="col-lg-8 col-md-6 col-sm-12">
+                                        <h2> About <span>{{ $item->name }}</span></h2>
+                                        <p>{{ $item->desc }}</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="about-img">
+                                            <img class="img-fluid rounded" src="{{ url($item->images) }}" alt="">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row align-items-center about-main-info">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="about-img">
-                                    <img class="img-fluid rounded" src="{{ asset('theme-client/images/about-img-02.jpg') }}"
-                                        alt="" />
+                            @else
+                                <div class="row align-items-center about-main-info">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="about-img">
+                                            <img class="img-fluid rounded" src="{{ url($item->images) }}" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-6 col-sm-12">
+                                        <h2 style="font-family: initial;"> About <span>{{ $item->name }}</span></h2>
+                                        <p>{{ $item->desc }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-8 col-md-6 col-sm-12">
-                                <h2> About <span>...</span></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptate.
-                                </p>
-                            </div>
-                        </div>
+                            @endif
+                        @endforeach
+
+                
+
+                   
+
+
+
                     </div>
                 </div>
             </div>

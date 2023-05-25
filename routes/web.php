@@ -6,6 +6,8 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\TeamBuildingController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminUsersController;
+use App\Http\Controllers\AdminPersonalController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LogoutController;
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,10 @@ use App\Http\Controllers\LogoutController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('homes');
+
+
+Route::get('/',[WelcomeController::class,'index'])->name('homes');
+
 
 Auth::routes(['verify' => true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth', 'verified');
@@ -45,7 +48,6 @@ Route::group(['middleware' => ['auth', 'verified',], 'prefix' => 'admin'], funct
 
 //users
 Route::group(['middleware' => ['auth', 'verified',], 'prefix' => 'admin/user'], function () {
-
     Route::get('list', [AdminUsersController::class, 'list_users'])->name('user.list');
     Route::get('add', [AdminUsersController::class, 'add_user'])->name('user.add');
     Route::post('store', [AdminUsersController::class, 'store'])->name('user.store');
@@ -53,6 +55,19 @@ Route::group(['middleware' => ['auth', 'verified',], 'prefix' => 'admin/user'], 
     Route::post('update/{user}', [AdminUsersController::class, 'update'])->name('user.update');
     Route::get('delete/{user}', [AdminUsersController::class, 'delete'])->name('user.delete');
 });
+
+
+// personal
+Route::group(['middleware' => ['auth', 'verified',], 'prefix' => 'admin/personal'], function () {
+  
+    Route::get('list', [AdminPersonalController::class, 'list'])->name('personal.list');
+    Route::get('create', [AdminPersonalController::class, 'create'])->name('personal.create');
+    Route::post('store', [AdminPersonalController::class, 'store'])->name('personal.store');
+    Route::get('edit/{personal}', [AdminPersonalController::class, 'edit'])->name('personal.edit');
+    Route::post('update/{personal}', [AdminPersonalController::class, 'update'])->name('personal.update');
+    Route::get  ('delete/{personal}', [AdminPersonalController::class, 'delete'])->name('personal.delete');
+});
+
 
 //logout
 Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform')->middleware('auth');

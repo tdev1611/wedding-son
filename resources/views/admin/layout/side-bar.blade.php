@@ -53,19 +53,20 @@
                             </div>
                             Dashboard
                         </a>
+
                     </li>
-                    <li class="nav-link">
-                        <a href="?view=list-post">
+                    <li class="nav-link {{ $modules_active == 'personal' ? 'active' : '' }}">
+                        <a href="{{ route('personal.list') }}">
                             <div class="nav-link-icon d-inline-flex">
                                 <i class="far fa-folder"></i>
                             </div>
-                            Trang
+                            Thông tin cá nhân
                         </a>
                         <i class="arrow fas fa-angle-right"></i>
 
                         <ul class="sub-menu">
-                            <li><a href="?view=add-post">Thêm mới</a></li>
-                            <li><a href="?view=list-post">Danh sách</a></li>
+                            <li><a href="{{ route('personal.create') }}">Thêm mới</a></li>
+                            <li><a href="{{ route('personal.list') }}">Danh sách</a></li>
                         </ul>
                     </li>
                     <li class="nav-link">
