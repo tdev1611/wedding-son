@@ -65,7 +65,7 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="{{ route('homes') }}">Trang chủ</a></li>
                         {{-- <li><a class="nav-link" href="#about">Thông tin về Studio</a></li> --}}
-                        <li><a class="nav-link" href="{{ route('story.index') }}">Story</a></li>
+                        <li><a class="nav-link" href="{{ route('story.index') }}">Thông tin Studio</a></li>
                         {{-- story.index --}}
                         {{-- <li><a class="nav-link" href="#family">Family</a></li> --}}
                         <li><a class="nav-link" href="{{ route('tbuilding.index') }}">Team building</a></li>

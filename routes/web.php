@@ -28,7 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 // story
-Route::get('story', [StoryController::class, 'index'])->name('story.index');
+Route::get('thong-tin-studio', [StoryController::class, 'index'])->name('story.index');
 
 // team buidling
 

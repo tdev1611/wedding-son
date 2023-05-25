@@ -12,7 +12,7 @@
                         <div class="lbox-caption">
                             <div class="lbox-details">
                                 <h1>#Duchai & #B</h1>
-                                <h2>Chúng t đã kết hôn.. Lorem, ipsum dolor.</h3>
+                                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</h3>
                                     <p>Lưu giữ kỹ niệm <strong>Ngày/Tháng/Năm</strong></p>
                                     <a href="#contact" class="btn ">Contact</a>
                             </div>
@@ -23,23 +23,14 @@
                         <div class="lbox-caption">
                             <div class="lbox-details">
                                 <h1>#C & #D</h1>
-                                <h2>Chúng t đã kết hôn</h3>
+                                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</h3>
                                     <p>Lưu giữ kỹ niệm <strong>Ngày/Tháng/Năm</strong></p>
                                     <a href="#contact" class="btn ">Contact</a>
+                                    <p><small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, aliquam?</small></p>
                             </div>
                         </div>
                     </div>
-                    <div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000"
-                        style="background-image:url({{ asset('theme-client/images/slider-03.jpg') }});">
-                        <div class="lbox-caption">
-                            <div class="lbox-details">
-                                <h1>#C & #D</h1>
-                                <h2>Chúng t đã kết hôn</h3>
-                                    <p>Lưu giữ kỹ niệm <strong>Ngày/Tháng/Năm</strong></p>
-                                    <a href="#contact" class="btn ">Contact</a>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div><!-- .pogoSlider -->
             </div>
         </div>
