@@ -30,6 +30,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
+//lay out
+Route::get('lay-out',[WelcomeController::class,'layout'])->name('layouts-client');
+
 // story
 Route::get('thong-tin-studio', [StoryController::class, 'index'])->name('story.index');
 
